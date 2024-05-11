@@ -1,11 +1,11 @@
-squadra(roma).
+squadra(asroma).
 squadra(juve).
-squadra(lyon).
-squadra(nice).
+squadra(sampdoria).
+squadra(lazio).
 squadra(genoa).
 squadra(milan).
 squadra(bologna).
-squadra(lecce).
+squadra(toro).
 
 giornata(1..14).
 
@@ -23,6 +23,8 @@ giornata(1..14).
 :-match(G,(A,B)),match(J,(C,D)),match(K,(E,F)),A == C, C == E, K = J+1, J = G+1. % una squadra non puo' giocare piu' di due volte consecutivamente a casa
 :-match(G,(A,B)),match(J,(C,D)),match(K,(E,F)),B == D, D == F, K = J+1, J = G+1. % una squadra non puo' giocare piu' di due volte consecutivamente i trasferta
 
-
+:-match(G,(juve,B)), match(J,(toro,C)), G == J, B != toro, C != juve.
+:-match(G,(asroma,B)), match(J,(lazio,C)), G == J, B != lazio, C != asroma.
+:-match(G,(genoa,B)), match(J,(sampdoria,C)), G == J, B != sampdoria, C != genoa.
 
 #show match/2.
